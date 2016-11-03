@@ -56,7 +56,7 @@
   }
 
   // Reporter doesn't play well with PhantomJS
-  if (/PhantomJS/.test(window.navigator.userAgent)) {
+  if (typeof window.callPhantom === 'function') {
     // When running PhantomJS locally, the Jasmine reporter swallows the errors up.
     // Only needed when running Phantom locally.
     return jasmine.getEnv().addReporter({
